@@ -44,14 +44,11 @@ function TableCore(props) {
   }
 
   useEffect(() => {
-    console.log('core')
-    // console.log(props.rowData);
-    // console.log(headerData)
     setHeaders(headers);
-  },[rows, headers])
+  },[headers])
 
   //{"key": "status","header": "Status","sortState": "NONE"}
-  const headerClick = (key) => {
+  const headerClick = (key) => { // function to sort table data
     const index = headers.findIndex(obj => obj.key === key);
     if(headers[index].sortState === 'NONE'){
       headers[index].sortState = 'ASC';
